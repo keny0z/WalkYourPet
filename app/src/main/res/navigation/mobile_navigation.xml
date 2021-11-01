@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_buscar_paseadores">
+
+    <fragment
+        android:id="@+id/navigation_buscar_paseadores"
+        android:name="com.kevin.walkyourpet.ui.home.HomeFragment"
+        android:label="@string/title_buscar_paseadores"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_chat"
+        android:name="com.kevin.walkyourpet.ui.dashboard.DashboardFragment"
+        android:label="@string/title_chat"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_perfil"
+        android:name="com.kevin.walkyourpet.ui.notifications.NotificationsFragment"
+        android:label="@string/title_perfil"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navegation_mascota"
+        android:name="com.kevin.walkyourpet.ui.mascotas.MascotaFragment"
+        android:label="@string/title_mascotas"
+        tools:layout="@layout/fragment_mascota" />
+</navigation>

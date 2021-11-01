@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">WalkYourPet</string>
+    <string name="title_activity_home">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_mascotas">Mascotas</string>
+    <string name="title_perfil">Perfil</string>
+    <string name="title_chat">Chat</string>
+    <string name="title_buscar_paseadores">Paseadores</string>
+    <string name="campos_obligatorios">Todos los campos son obligatorios</string>
+    <string name="informacion_exitosa">registro exitoso</string>
+    <string name="ya_existe">ya existe</string>
+</resources>

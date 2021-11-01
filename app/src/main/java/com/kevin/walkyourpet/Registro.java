@@ -61,9 +61,12 @@ public class Registro extends AppCompatActivity {
                     insertarInformacion();
                     Toast.makeText(getApplicationContext(),getText(R.string.informacion_exitosa),Toast.LENGTH_LONG).show();
                     borrarInformacion();
-                }else {
-                    Toast.makeText(getApplicationContext(),getText(R.string.ya_existe),Toast.LENGTH_LONG).show();
+                }else if (usuarioConsultadoUsuario != null){
+                    Toast.makeText(getApplicationContext(),getText(R.string.ya_existe_usuario),Toast.LENGTH_LONG).show();
+                }else if (usuarioConsultadoCelular != null){
+                    Toast.makeText(getApplicationContext(),getText(R.string.ya_existe_celular),Toast.LENGTH_LONG).show();
                 }
+
             }
         });
     }

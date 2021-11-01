@@ -13,4 +13,6 @@
     <string name="campos_obligatorios">Todos los campos son obligatorios</string>
     <string name="informacion_exitosa">registro exitoso</string>
     <string name="ya_existe">ya existe</string>
+    <string name="ya_existe_usuario">el usuario ingresado ya esta en uso</string>
+    <string name="ya_existe_celular">el celular ingresado ya esta en uso</string>
 </resources>

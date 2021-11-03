@@ -6,7 +6,9 @@
         <entry key="..\:/Users/Kevin/Desktop/Documentos/Universidad/semestre-8/walk_your_pet/workspace/WalkYourPet/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Kevin/Desktop/Documentos/Universidad/semestre-8/walk_your_pet/workspace/WalkYourPet/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Kevin/Desktop/Documentos/Universidad/semestre-8/walk_your_pet/workspace/WalkYourPet/app/src/main/res/layout/activity_registro.xml" value="0.15806159420289856" />
-        <entry key="..\:/Users/Kevin/Desktop/Documentos/Universidad/semestre-8/walk_your_pet/workspace/WalkYourPet/app/src/main/res/layout/fragment_home.xml" value="0.35507246376811596" />
+        <entry key="..\:/Users/Kevin/Desktop/Documentos/Universidad/semestre-8/walk_your_pet/workspace/WalkYourPet/app/src/main/res/layout/fragment_dashboard.xml" value="0.176" />
+        <entry key="..\:/Users/Kevin/Desktop/Documentos/Universidad/semestre-8/walk_your_pet/workspace/WalkYourPet/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Users/Kevin/Desktop/Documentos/Universidad/semestre-8/walk_your_pet/workspace/WalkYourPet/app/src/main/res/layout/fragment_notifications.xml" value="0.17980072463768115" />
       </map>
     </option>
   </component>

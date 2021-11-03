@@ -14,7 +14,7 @@ import com.kevin.walkyourpet.PerfilPaseador;
 import com.kevin.walkyourpet.R;
 import com.kevin.walkyourpet.RegistroMascota;
 import com.kevin.walkyourpet.databinding.FragmentMascotaBinding;
-import com.kevin.walkyourpet.databinding.FragmentNotificationsBinding;
+
 
 /**
  * A simple {@link Fragment} subclass.

@@ -1,4 +1,4 @@
-package com.kevin.walkyourpet.ui.home;
+package com.kevin.walkyourpet.ui.paseadores;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,35 +6,30 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.kevin.walkyourpet.MainActivity;
 import com.kevin.walkyourpet.PaseadoresFavoritos;
 import com.kevin.walkyourpet.PerfilPaseador;
-import com.kevin.walkyourpet.R;
-import com.kevin.walkyourpet.databinding.FragmentHomeBinding;
+import com.kevin.walkyourpet.databinding.FragmentPaseadoresBinding;
 
-public class HomeFragment extends Fragment {
+public class PaseadoresFragment extends Fragment {
 
     ImageView imagen;
 
     com.google.android.material.floatingactionbutton.FloatingActionButton fabPaseadoresFavoritos;
 
-    private HomeViewModel homeViewModel;
-    private FragmentHomeBinding binding;
+    private PaseadoresViewModel paseadoresViewModel;
+    private FragmentPaseadoresBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        paseadoresViewModel =
+                new ViewModelProvider(this).get(PaseadoresViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentPaseadoresBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         initComponents();

@@ -50,7 +50,7 @@ public class PaseadorBaseAdapter extends BaseAdapter implements Filterable {
         ViewHolder holder = null;
         if (convertView == null) {
             holder = new ViewHolder();
-            convertView = inflater.inflate(R.layout.fragment_home, null);
+            convertView = inflater.inflate(R.layout.fragment_paseadores, null);
             holder.imagen = convertView.findViewById(R.id.imagen);
             holder.nombre = convertView.findViewById(R.id.nombre);
             holder.edad = convertView.findViewById(R.id.edad);

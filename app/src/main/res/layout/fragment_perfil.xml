@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -47,7 +47,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tvSalir"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombre"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
@@ -56,9 +56,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Ciudad: Rionegro"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintEnd_toEndOf="@+id/tvNombre"
+        app:layout_constraintStart_toStartOf="@+id/tvNombre"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombre" />
 
     <TextView
         android:id="@+id/textView4"
@@ -71,7 +71,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tvCelular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -86,7 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Edad: 23 años"
-        app:layout_constraintEnd_toEndOf="@+id/textView5"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintEnd_toEndOf="@+id/tvCelular"
+        app:layout_constraintStart_toStartOf="@+id/tvCelular"
+        app:layout_constraintTop_toBottomOf="@+id/tvCelular" />
 </androidx.constraintlayout.widget.ConstraintLayout>

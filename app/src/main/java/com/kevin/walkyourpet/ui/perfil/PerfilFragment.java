@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.kevin.walkyourpet.MainActivity;
 import com.kevin.walkyourpet.databinding.FragmentPerfilBinding;
+import com.kevin.walkyourpet.sesion.SesionUsuario;
 
 public class PerfilFragment extends Fragment {
 
@@ -22,6 +23,8 @@ public class PerfilFragment extends Fragment {
 
     Button btnEditar;
     TextView tvSalir;
+    TextView tvNombre;
+    TextView tvCelular;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -31,6 +34,8 @@ public class PerfilFragment extends Fragment {
         binding = FragmentPerfilBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         initComponents();
+        tvNombre.setText(SesionUsuario.obtenerInstancia().getNombre());
+        tvCelular.setText(SesionUsuario.obtenerInstancia().getCelular());
 
         tvSalir.setOnClickListener(v -> {
             iniciarLogin();
@@ -52,6 +57,8 @@ public class PerfilFragment extends Fragment {
     private void initComponents(){
         btnEditar = binding.btnEditar;
         tvSalir= binding.tvSalir;
+        tvNombre = binding.tvNombre;
+        tvCelular = binding.tvCelular;
     }
 
     private void iniciarLogin(){

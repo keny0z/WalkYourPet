@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.kevin.walkyourpet.entities.Usuario;
 import com.kevin.walkyourpet.persistencia.room.DataBaseHelper;
+import com.kevin.walkyourpet.sesion.SesionUsuario;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
     EditText etUsuario;
     EditText etClave;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 Usuario usuarioConsultadoUsuario = DataBaseHelper.getDBMainThread(getApplicationContext()).getUsuarioDAO().findByUsuario(usuario.getUsuario());
                 if (usuarioConsultadoUsuario != null){
                     if (usuarioConsultadoUsuario.getClave().equals(etClave.getText().toString())){
+                        SesionUsuario.cargarUsuario(usuarioConsultadoUsuario);
                         iniciarHome();
                     }else{
                         Toast.makeText(getApplicationContext(),getText(R.string.clave_incorrecta),Toast.LENGTH_LONG).show();

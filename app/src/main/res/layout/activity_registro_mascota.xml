@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnRegistro"
+        android:id="@+id/btnAgragar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -37,7 +37,7 @@
         app:layout_constraintGuide_percent="0.9" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/txtNombreMascota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
@@ -49,40 +49,40 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/txtRaza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Raza"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintEnd_toEndOf="@+id/txtNombreMascota"
+        app:layout_constraintStart_toStartOf="@+id/txtNombreMascota"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombreMascota" />
 
     <EditText
-        android:id="@+id/editTextDate3"
+        android:id="@+id/txtFechaMascota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Fecha de nacimiento"
         android:inputType="date"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName5"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName5"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+        app:layout_constraintEnd_toEndOf="@+id/txtRaza"
+        app:layout_constraintStart_toStartOf="@+id/txtRaza"
+        app:layout_constraintTop_toBottomOf="@+id/txtRaza" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
+        android:id="@+id/txtPeso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Peso"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="@+id/editTextDate3"
-        app:layout_constraintStart_toStartOf="@+id/editTextDate3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate3" />
+        app:layout_constraintEnd_toEndOf="@+id/txtFechaMascota"
+        app:layout_constraintStart_toStartOf="@+id/txtFechaMascota"
+        app:layout_constraintTop_toBottomOf="@+id/txtFechaMascota" />
 
     <ImageView
         android:id="@+id/imageView9"

@@ -7,11 +7,16 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import androidx.room.TypeConverter;
 
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.kevin.walkyourpet.persistencia.Tabla;
 
 
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -37,4 +42,6 @@ public class Usuario {
     private String fechaNacimiento;
     @ColumnInfo(name="celular")
     private String celular;
+    @ColumnInfo(name="mascotas")
+    private ArrayList<Mascota> mascotas;
 }

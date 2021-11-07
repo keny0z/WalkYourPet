@@ -11,11 +11,11 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.kevin.walkyourpet.entities.DataBaseHelper;
+import com.kevin.walkyourpet.entities.Mascota;
 import com.kevin.walkyourpet.entities.Usuario;
-import com.kevin.walkyourpet.persistencia.room.DataBaseHelper;
 
-import java.util.Calendar;
-import java.util.Date;
+import java.util.ArrayList;
 
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.schedulers.Schedulers;
@@ -46,6 +46,19 @@ public class Registro extends AppCompatActivity {
             if(hayCamposVacíos()){
                 Toast.makeText(getApplicationContext(),getText(R.string.campos_obligatorios),Toast.LENGTH_LONG).show();
             }else{
+
+                Mascota oddy = new Mascota();
+                oddy.setId(10);
+                oddy.setNombre("oddy");
+                oddy.setRaza("pomerania");
+                oddy.setFechaNacimiento("2011");
+                oddy.setPeso("5kg");
+
+                ArrayList<Mascota> mascotas = new ArrayList<>();
+                mascotas.add(oddy);
+
+                usuario.setMascotas(mascotas);
+
                 usuario.setUsuario(txtUsuario.getText().toString());
                 usuario.setNombre(txtNombre.getText().toString());
                 usuario.setApellido(txtApellido.getText().toString());
@@ -79,7 +92,7 @@ public class Registro extends AppCompatActivity {
         txtClave= findViewById(R.id.txtClave);
         txtFechaNacimiento= findViewById(R.id.txtFechaNacimiento);
         txtCelular= findViewById(R.id.txtCelular);
-        btnRegistro= findViewById(R.id.btnRegistro);
+        btnRegistro= findViewById(R.id.btnAgragar);
     }
 
     private void iniciarHome(){

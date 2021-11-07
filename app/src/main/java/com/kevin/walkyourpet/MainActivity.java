@@ -9,8 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.kevin.walkyourpet.entities.DataBaseHelper;
 import com.kevin.walkyourpet.entities.Usuario;
-import com.kevin.walkyourpet.persistencia.room.DataBaseHelper;
 import com.kevin.walkyourpet.sesion.SesionUsuario;
 
 public class MainActivity extends AppCompatActivity {

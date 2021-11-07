@@ -1,4 +1,4 @@
-package com.kevin.walkyourpet.persistencia.room;
+package com.kevin.walkyourpet.entities;
 
 
 import android.content.Context;
@@ -6,14 +6,13 @@ import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-
-import com.kevin.walkyourpet.entities.Usuario;
-import com.kevin.walkyourpet.persistencia.dao.UsuarioDAO;
-
+import androidx.room.TypeConverters;
 
 
 @Database(entities = {
-        Usuario.class }, version = DataBaseHelper.VERSION_BASE_DATOS, exportSchema = false)
+        Usuario.class}
+         , version = DataBaseHelper.VERSION_BASE_DATOS, exportSchema = false)
+@TypeConverters({ConvertersMascota.class})
 public abstract  class DataBaseHelper extends RoomDatabase {
 
     public static final int VERSION_BASE_DATOS = 1;
@@ -46,6 +45,7 @@ public abstract  class DataBaseHelper extends RoomDatabase {
 
 
     public abstract UsuarioDAO getUsuarioDAO();
+
 
 
 

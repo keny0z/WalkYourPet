@@ -17,4 +17,5 @@
     <string name="ya_existe_celular">el celular ingresado ya esta en uso</string>
     <string name="clave_incorrecta">clave incorrecta</string>
     <string name="usuario_no_existe">el usuario ingresado no existe</string>
+    <string name="ya_existe_mascota">ya tienes una mascota con el nombre ingresado</string>
 </resources>

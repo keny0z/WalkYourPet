@@ -11,9 +11,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.kevin.walkyourpet.entities.DataBaseHelper;
 import com.kevin.walkyourpet.entities.Mascota;
 import com.kevin.walkyourpet.entities.Usuario;
+import com.kevin.walkyourpet.persistencia.room.DataBaseHelper;
 
 import java.util.ArrayList;
 

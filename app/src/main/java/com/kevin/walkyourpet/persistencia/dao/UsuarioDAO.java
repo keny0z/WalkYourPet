@@ -1,10 +1,12 @@
-package com.kevin.walkyourpet.entities;
+package com.kevin.walkyourpet.persistencia.dao;
 
 
 
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+
+import com.kevin.walkyourpet.entities.Usuario;
 
 @Dao
 public interface UsuarioDAO {

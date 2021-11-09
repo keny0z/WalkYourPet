@@ -43,5 +43,5 @@ public class Usuario {
     @ColumnInfo(name="celular")
     private String celular;
     @ColumnInfo(name="mascotas")
-    private ArrayList<Mascota> mascotas;
+    private ArrayList<Mascota> mascotas = new ArrayList<>();
 }

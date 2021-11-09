@@ -47,17 +47,6 @@ public class Registro extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),getText(R.string.campos_obligatorios),Toast.LENGTH_LONG).show();
             }else{
 
-                Mascota oddy = new Mascota();
-                oddy.setId(10);
-                oddy.setNombre("oddy");
-                oddy.setRaza("pomerania");
-                oddy.setFechaNacimiento("2011");
-                oddy.setPeso("5kg");
-
-                ArrayList<Mascota> mascotas = new ArrayList<>();
-                mascotas.add(oddy);
-
-                usuario.setMascotas(mascotas);
 
                 usuario.setUsuario(txtUsuario.getText().toString());
                 usuario.setNombre(txtNombre.getText().toString());

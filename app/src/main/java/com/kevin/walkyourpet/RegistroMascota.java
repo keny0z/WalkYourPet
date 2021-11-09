@@ -2,11 +2,20 @@ package com.kevin.walkyourpet;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.kevin.walkyourpet.entities.Mascota;
+import com.kevin.walkyourpet.entities.Usuario;
+import com.kevin.walkyourpet.persistencia.room.DataBaseHelper;
+import com.kevin.walkyourpet.sesion.SesionUsuario;
+import com.kevin.walkyourpet.ui.mascotas.MascotaFragment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class RegistroMascota extends AppCompatActivity {
 
@@ -24,7 +33,7 @@ public class RegistroMascota extends AppCompatActivity {
         setContentView(R.layout.activity_registro_mascota);
         initComponents();
 
-        /*
+
         btnAgragar.setOnClickListener(v -> {
             if(hayCamposVacíos()){
                 Toast.makeText(getApplicationContext(),getText(R.string.campos_obligatorios),Toast.LENGTH_LONG).show();
@@ -33,9 +42,13 @@ public class RegistroMascota extends AppCompatActivity {
                 mascota.setRaza(txtRaza.getText().toString());
                 mascota.setFechaNacimiento(txtFechaMascota.getText().toString());
                 mascota.setPeso(txtPeso.getText().toString());
-                Mascota mascotaConsultada = DataBaseHelper.getDBMainThread(getApplicationContext()).getMascotaDAO().findByNombre(mascota.getNombre());
-                if(mascotaConsultada == null){
-                    insertarInformacion();
+                List<Mascota> mascotaConsultada = consultarMascotaPorNombre(mascota.getNombre());
+                if(mascotaConsultada.size()==0){
+                    ArrayList<Mascota> nuevasMascotas =  SesionUsuario.obtenerInstancia().getMascotas();
+                    nuevasMascotas.add(mascota);
+                    SesionUsuario.obtenerInstancia().setMascotas(nuevasMascotas);
+                    actualizarUsuario(SesionUsuario.obtenerInstancia());
+                    iniciarHome();
                     Toast.makeText(getApplicationContext(),getText(R.string.informacion_exitosa),Toast.LENGTH_LONG).show();
 
                 }else {
@@ -43,7 +56,7 @@ public class RegistroMascota extends AppCompatActivity {
                 }
             }
         });
-         */
+
 
     }
 
@@ -63,4 +76,23 @@ public class RegistroMascota extends AppCompatActivity {
         }
         return hayVacios;
     }
+    private List<Mascota> consultarMascotaPorNombre(String nombre){
+        List<Mascota> mascotaEncontrada = new ArrayList<>();
+        for (Mascota mascota:SesionUsuario.obtenerInstancia().getMascotas()) {
+            if (mascota.getNombre().equals(nombre)){
+                mascotaEncontrada.add(mascota);
+            }
+        }
+        return mascotaEncontrada;
+    }
+
+    private void actualizarUsuario(Usuario usuario){
+        DataBaseHelper.getDBMainThread(getApplicationContext()).getUsuarioDAO().update(usuario);
+    }
+    private void iniciarHome(){
+        Intent intent = new Intent(getApplicationContext(),Home.class);
+        startActivity(intent);
+    }
+
+
 }

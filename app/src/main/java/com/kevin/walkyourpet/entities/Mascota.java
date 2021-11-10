@@ -26,4 +26,6 @@ public class Mascota {
     private String fechaNacimiento;
     @ColumnInfo(name="peso")
     private String peso;
+    @ColumnInfo(name="imagen")
+    private int imagen;
 }

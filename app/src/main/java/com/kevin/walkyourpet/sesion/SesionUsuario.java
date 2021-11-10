@@ -18,14 +18,7 @@ public class SesionUsuario {
         instancia.setClave(usuario.getClave());
         instancia.setFechaNacimiento(usuario.getFechaNacimiento());
         instancia.setCelular(usuario.getCelular());
+        instancia.setMascotas(usuario.getMascotas());
     }
-    public static void limpiarUsuario(){
-        instancia.setId(0);
-        instancia.setUsuario("");
-        instancia.setNombre("");
-        instancia.setApellido("");
-        instancia.setClave("");
-        instancia.setFechaNacimiento("");
-        instancia.setCelular("");
-    }
+
 }

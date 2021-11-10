@@ -4,16 +4,21 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.kevin.walkyourpet.PerfilPaseador;
 import com.kevin.walkyourpet.R;
 import com.kevin.walkyourpet.RegistroMascota;
 import com.kevin.walkyourpet.databinding.FragmentMascotaBinding;
+import com.kevin.walkyourpet.entities.Mascota;
+import com.kevin.walkyourpet.recyclerview.adapter.RecyclerAdapterMascota;
+import com.kevin.walkyourpet.sesion.SesionUsuario;
+
+import java.util.ArrayList;
 
 
 /**
@@ -23,6 +28,9 @@ import com.kevin.walkyourpet.databinding.FragmentMascotaBinding;
  */
 public class MascotaFragment extends Fragment {
 
+    private RecyclerView rvMascotas;
+    private RecyclerAdapterMascota adapter;
+    private ArrayList<Mascota> mascotas;
     com.google.android.material.floatingactionbutton.FloatingActionButton fabPaseadoresFavoritos;
 
     private FragmentMascotaBinding binding;
@@ -69,6 +77,7 @@ public class MascotaFragment extends Fragment {
 
     private void initComponents(){
         fabPaseadoresFavoritos = binding.fabPaseadoresFavoritos;
+        rvMascotas = binding.rvMascotas;
 
     }
 
@@ -84,6 +93,26 @@ public class MascotaFragment extends Fragment {
         View root = binding.getRoot();
 
         initComponents();
+        LinearLayoutManager manager = new LinearLayoutManager(getActivity().getApplicationContext());
+        rvMascotas.setLayoutManager(manager);
+        mascotas= SesionUsuario.obtenerInstancia().getMascotas();
+
+        /*
+        //provicional
+        Mascota mascotaProvicional = new Mascota();
+        mascotaProvicional.setId(55);
+        mascotaProvicional.setNombre("perry");
+        mascotaProvicional.setRaza("pomerania");
+        mascotaProvicional.setPeso("5");
+        mascotaProvicional.setFechaNacimiento("2011");
+        mascotaProvicional.setImagen(R.drawable.perro);
+        mascotas.add(mascotaProvicional);
+        //fin provicional
+         */
+
+        adapter= new RecyclerAdapterMascota(mascotas);
+        rvMascotas.setAdapter(adapter);
+
 
         fabPaseadoresFavoritos.setOnClickListener(v -> {
             iniciarRegistroMascota();
@@ -94,4 +123,6 @@ public class MascotaFragment extends Fragment {
         return root;
 
     }
+
+
 }

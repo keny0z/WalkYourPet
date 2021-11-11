@@ -23,6 +23,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.kevin.walkyourpet.databinding.ActivityHomeBinding;
+import com.kevin.walkyourpet.sesion.SesionUsuario;
 
 import java.util.List;
 
@@ -68,6 +69,9 @@ public class Home extends AppCompatActivity {
         if (localizacion != null) {
             Log.d("Latitud", String.valueOf(localizacion.getLatitude()));
             Log.d("Longitud", String.valueOf(localizacion.getLongitude()));
+
+            SesionUsuario.obtenerInstancia().setLatitud(localizacion.getLatitude());
+            SesionUsuario.obtenerInstancia().setLongitud(localizacion.getLongitude());
         } else {
             ubicacion.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 0, new milocalizacionListener());
 
@@ -111,6 +115,9 @@ public class Home extends AppCompatActivity {
         public void onLocationChanged(@NonNull Location location) {
             Log.d("Latitud", String.valueOf(location.getLatitude()));
             Log.d("Longitud", String.valueOf(location.getLongitude()));
+
+            SesionUsuario.obtenerInstancia().setLatitud(location.getLatitude());
+            SesionUsuario.obtenerInstancia().setLongitud(location.getLongitude());
         }
     }
 

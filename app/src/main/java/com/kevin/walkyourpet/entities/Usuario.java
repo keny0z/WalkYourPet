@@ -42,6 +42,10 @@ public class Usuario {
     private String fechaNacimiento;
     @ColumnInfo(name="celular")
     private String celular;
+    @ColumnInfo(name="latitud")
+    private Double latitud;
+    @ColumnInfo(name="longitud")
+    private Double longitud;
     @ColumnInfo(name="mascotas")
     private ArrayList<Mascota> mascotas = new ArrayList<>();
 }

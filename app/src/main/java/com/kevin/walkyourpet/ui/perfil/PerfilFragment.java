@@ -41,6 +41,8 @@ public class PerfilFragment extends Fragment {
             iniciarLogin();
         });
 
+
+
         //final TextView textView = binding.textNotifications;
         /*
         notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {

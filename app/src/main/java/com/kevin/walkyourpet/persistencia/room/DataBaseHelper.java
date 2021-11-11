@@ -9,12 +9,14 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
 import com.kevin.walkyourpet.entities.ConvertersMascota;
+import com.kevin.walkyourpet.entities.Paseador;
 import com.kevin.walkyourpet.entities.Usuario;
+import com.kevin.walkyourpet.persistencia.dao.PaseadorDAO;
 import com.kevin.walkyourpet.persistencia.dao.UsuarioDAO;
 
 
 @Database(entities = {
-        Usuario.class}
+        Usuario.class, Paseador.class}
          , version = DataBaseHelper.VERSION_BASE_DATOS, exportSchema = false)
 @TypeConverters({ConvertersMascota.class})
 public abstract  class DataBaseHelper extends RoomDatabase {
@@ -49,6 +51,7 @@ public abstract  class DataBaseHelper extends RoomDatabase {
 
 
     public abstract UsuarioDAO getUsuarioDAO();
+    public abstract PaseadorDAO getPaseadorDAO();
 
 
 

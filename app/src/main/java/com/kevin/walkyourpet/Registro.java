@@ -125,7 +125,6 @@ public class Registro extends AppCompatActivity {
         txtApellido.setText("");
         txtClave.setText("");
         txtFechaNacimiento.setText("");
-        txtFechaNacimiento.setText("");
         txtCelular.setText("");
     }
 }

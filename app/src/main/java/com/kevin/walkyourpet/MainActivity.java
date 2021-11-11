@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.kevin.walkyourpet.entities.Paseador;
 import com.kevin.walkyourpet.entities.Usuario;
 import com.kevin.walkyourpet.persistencia.room.DataBaseHelper;
 import com.kevin.walkyourpet.sesion.SesionUsuario;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initComponents();
+        crearPaseadores();
 
         tvLinkRegistro.setOnClickListener(v -> {
             iniciarRegistro();
@@ -83,5 +85,17 @@ public class MainActivity extends AppCompatActivity {
             hayVacios=true;
         }
         return hayVacios;
+    }
+    private void crearPaseadores(){
+        Paseador paseadorUco = new Paseador();
+        paseadorUco.setUsuario("Juan");
+        paseadorUco.setNombre("Juan");
+        paseadorUco.setApellido("Osorio");
+        paseadorUco.setClave("123");
+        paseadorUco.setFechaNacimiento("17/07/2001");
+        paseadorUco.setCelular("3014470368");
+        paseadorUco.setLatitud(6.1505397);
+        paseadorUco.setLongitud(-75.3660258);
+        DataBaseHelper.getDBMainThread(getApplicationContext()).getPaseadorDAO().create(paseadorUco);
     }
 }

@@ -1,31 +1,41 @@
 package com.kevin.walkyourpet.entities;
 
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+import com.kevin.walkyourpet.persistencia.Tabla;
+
+import java.util.ArrayList;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Entity(tableName = Tabla.PASEADOR)
+@NoArgsConstructor
 public class Paseador {
-    private int imagen;
+
+    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    @ColumnInfo(name="id")
+    private Integer id;
+    @ColumnInfo(name="usuario")
+    private String usuario;
+    @ColumnInfo(name="nombre")
     private String nombre;
-    private int edad;
-    private String distancia;
+    @ColumnInfo(name="apellido")
+    private String apellido;
+    @ColumnInfo(name="clave")
+    private String clave;
+    @ColumnInfo(name="fechaNacimiento")
+    private String fechaNacimiento;
+    @ColumnInfo(name="celular")
+    private String celular;
+    @ColumnInfo(name="latitud")
+    private Double latitud;
+    @ColumnInfo(name="longitud")
+    private Double longitud;
 
-    public Paseador(int imagen, String nombre, int edad, String distancia) {
-        this.imagen = imagen;
-        this.nombre = nombre;
-        this.edad = edad;
-        this.distancia = distancia;
-    }
-
-    public int getImagen() {
-        return imagen;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public String getDistancia() {
-        return distancia;
-    }
 }

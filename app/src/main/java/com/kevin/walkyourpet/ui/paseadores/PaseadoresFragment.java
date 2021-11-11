@@ -28,15 +28,25 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.kevin.walkyourpet.PaseadoresFavoritos;
 import com.kevin.walkyourpet.PerfilPaseador;
+import com.kevin.walkyourpet.R;
 import com.kevin.walkyourpet.databinding.FragmentPaseadoresBinding;
+import com.kevin.walkyourpet.entities.Mascota;
+import com.kevin.walkyourpet.entities.Paseador;
+import com.kevin.walkyourpet.persistencia.room.DataBaseHelper;
+import com.kevin.walkyourpet.recyclerview.adapter.RecyclerAdapterMascota;
+import com.kevin.walkyourpet.recyclerview.adapter.RecyclerAdapterPaseador;
+import com.kevin.walkyourpet.sesion.SesionUsuario;
 
 
-
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -44,13 +54,12 @@ public class PaseadoresFragment extends Fragment {
 
     //private LocationManager ubicacion;
 
-
+    private RecyclerAdapterPaseador adapter;
     ImageView imagen;
+    RecyclerView rvPaseadores;
+    private ArrayList<Paseador> paseadores = new ArrayList<>();
 
-    //provicional
-    TextView latitud;
-    TextView longitud;
-    //fin provicional
+
 
     com.google.android.material.floatingactionbutton.FloatingActionButton fabPaseadoresFavoritos;
 
@@ -68,16 +77,30 @@ public class PaseadoresFragment extends Fragment {
         initComponents();
         //localizacion();
 
+        LinearLayoutManager manager = new LinearLayoutManager(getActivity().getApplicationContext());
+        rvPaseadores.setLayoutManager(manager);
+        Paseador paseadorUco = new Paseador();
+        paseadorUco.setUsuario("Juan");
+        paseadorUco.setNombre("Juan");
+        paseadorUco.setApellido("Osorio");
+        paseadorUco.setClave("123");
+        paseadorUco.setFechaNacimiento("17/07/2001");
+        paseadorUco.setCelular("3014470368");
+        paseadorUco.setLatitud(6.1505397);
+        paseadorUco.setLongitud(-75.3660258);
+        paseadorUco.setImagen(R.drawable.paseador);
+        paseadores.add(paseadorUco);
+        adapter= new RecyclerAdapterPaseador(paseadores);
+        rvPaseadores.setAdapter(adapter);
 
-        //provicional
-        latitud = binding.lat;
-        longitud = binding.lon;
 
-        //fin provicional
 
+        /*
         imagen.setOnClickListener(v -> {
             iniciarPerfilPaseador();
         });
+        */
+
 
         fabPaseadoresFavoritos.setOnClickListener(v -> {
             iniciarPaseadoresFavoritos();
@@ -97,9 +120,8 @@ public class PaseadoresFragment extends Fragment {
     }
 
     private void initComponents() {
-        imagen = binding.imagen;
+        rvPaseadores = binding.rvPaseadores;
         fabPaseadoresFavoritos = binding.fabPaseadoresFavoritos;
-
     }
 
     private void iniciarPerfilPaseador() {

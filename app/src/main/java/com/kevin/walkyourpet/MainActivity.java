@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         paseadorUco.setCelular("3014470368");
         paseadorUco.setLatitud(6.1505397);
         paseadorUco.setLongitud(-75.3660258);
-        DataBaseHelper.getDBMainThread(getApplicationContext()).getPaseadorDAO().create(paseadorUco);
+        paseadorUco.setImagen(R.drawable.paseador);
+        //DataBaseHelper.getDBMainThread(getApplicationContext()).getPaseadorDAO().create(paseadorUco);
     }
 }

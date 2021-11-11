@@ -18,6 +18,8 @@ public class SesionUsuario {
         instancia.setClave(usuario.getClave());
         instancia.setFechaNacimiento(usuario.getFechaNacimiento());
         instancia.setCelular(usuario.getCelular());
+        instancia.setLatitud(usuario.getLatitud());
+        instancia.setLongitud(usuario.getLongitud());
         instancia.setMascotas(usuario.getMascotas());
     }
 

@@ -41,10 +41,9 @@ public class Home extends AppCompatActivity {
         setContentView(binding.getRoot());
 
 
-        localizacion();
-        registrarLocalizacion();
-        //listaProviders();
-        //obtenerMejorCriterio();
+        //localizacion();
+        //registrarLocalizacion();
+
 
 
         BottomNavigationView navView = findViewById(R.id.nav_view);

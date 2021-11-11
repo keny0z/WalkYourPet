@@ -7,199 +7,35 @@
     tools:context=".ui.paseadores.PaseadoresFragment">
 
 
-    <ImageView
-        android:id="@+id/imagen"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/paseador" />
-
-    <ImageView
-        android:id="@+id/imagen2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagen"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/paseador" />
-
-    <TextView
-        android:id="@+id/nombre"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="5dp"
-        android:gravity="start"
-        android:text="Maria"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/contactar"
-        app:layout_constraintStart_toEndOf="@+id/imagen"
-        app:layout_constraintTop_toTopOf="@+id/imagen"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/nombre2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="5dp"
-        android:gravity="start"
-        android:text="Juana"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/contactar2"
-        app:layout_constraintStart_toEndOf="@+id/imagen"
-        app:layout_constraintTop_toTopOf="@+id/imagen2"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/edad"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="22 años"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/nombre"
-        app:layout_constraintStart_toStartOf="@+id/nombre"
-        app:layout_constraintTop_toBottomOf="@+id/nombre"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/contactar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:text="contactar"
-        android:textColor="@color/purple_700"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/nombre"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/nombre" />
-
-    <TextView
-        android:id="@+id/contactar2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:text="contactar"
-        android:textColor="@color/purple_700"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/nombre2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/nombre2" />
-
-    <TextView
-        android:id="@+id/edad3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="27 años"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/nombre2"
-        app:layout_constraintStart_toStartOf="@+id/nombre2"
-        app:layout_constraintTop_toBottomOf="@+id/nombre2"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/edad4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="3 km"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imagen2"
-        app:layout_constraintEnd_toEndOf="@+id/edad3"
-        app:layout_constraintStart_toStartOf="@+id/edad3"
-        app:layout_constraintTop_toBottomOf="@+id/edad3"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/distancia"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="2 km"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imagen"
-        app:layout_constraintEnd_toEndOf="@+id/edad"
-        app:layout_constraintStart_toStartOf="@+id/edad"
-        app:layout_constraintTop_toBottomOf="@+id/edad"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:src="@drawable/ic_baseline_star_border_24"
-        app:layout_constraintBottom_toBottomOf="@+id/distancia"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/distancia" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:src="@drawable/ic_baseline_star_border_24"
-        app:layout_constraintBottom_toBottomOf="@+id/edad4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/edad4" />
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabPaseadoresFavoritos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="80dp"
         android:clickable="true"
         android:src="@drawable/ic_baseline_star_24"
         app:backgroundTint="@color/purple_500"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
-        android:id="@+id/lat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="latitud"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagen2" />
+        app:layout_constraintTop_toBottomOf="@+id/rvPaseadores"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/lon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="longitud"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPaseadores"
+        android:layout_width="384dp"
+        android:layout_height="516dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lat" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19999999" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -55,6 +55,11 @@ public class Registro extends AppCompatActivity {
                 usuario.setFechaNacimiento(txtFechaNacimiento.getText().toString());
                 usuario.setCelular(txtCelular.getText().toString());
 
+                //provicional
+                usuario.setLatitud(6.1494576);
+                usuario.setLongitud(-75.3796319);
+                //fin provicional
+
                 Usuario usuarioConsultadoUsuario = DataBaseHelper.getDBMainThread(getApplicationContext()).getUsuarioDAO().findByUsuario(usuario.getUsuario());
                 Usuario usuarioConsultadoCelular = DataBaseHelper.getDBMainThread(getApplicationContext()).getUsuarioDAO().findByCelular(usuario.getCelular());
 

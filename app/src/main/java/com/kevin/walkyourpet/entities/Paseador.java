@@ -37,5 +37,7 @@ public class Paseador {
     private Double latitud;
     @ColumnInfo(name="longitud")
     private Double longitud;
+    @ColumnInfo(name="imagen")
+    private int imagen;
 
 }

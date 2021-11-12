@@ -2,6 +2,7 @@ package com.kevin.walkyourpet;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
 import android.location.Location;
@@ -9,6 +10,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.location.LocationProvider;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -23,6 +25,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.kevin.walkyourpet.databinding.ActivityHomeBinding;
+import com.kevin.walkyourpet.sesion.CoordenadasUsuario;
 import com.kevin.walkyourpet.sesion.SesionUsuario;
 
 import java.util.List;
@@ -41,8 +44,12 @@ public class Home extends AppCompatActivity {
         setContentView(binding.getRoot());
 
 
-        //localizacion();
-        //registrarLocalizacion();
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,}, 1000);
+        } else {
+            localizacion();
+            registrarLocalizacion();
+        }
 
 
 
@@ -58,19 +65,27 @@ public class Home extends AppCompatActivity {
     }
 
     private void localizacion() {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{
-                    Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION
+                    android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION
             }, 1000);
         }
+
+
+
+
         ubicacion = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         Location localizacion = ubicacion.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         if (localizacion != null) {
             Log.d("Latitud", String.valueOf(localizacion.getLatitude()));
             Log.d("Longitud", String.valueOf(localizacion.getLongitude()));
 
-            SesionUsuario.obtenerInstancia().setLatitud(localizacion.getLatitude());
-            SesionUsuario.obtenerInstancia().setLongitud(localizacion.getLongitude());
+            //SesionUsuario.obtenerInstancia().setLatitud(localizacion.getLatitude());
+            //SesionUsuario.obtenerInstancia().setLongitud(localizacion.getLongitude());
+
+            CoordenadasUsuario.obtenerInstancia().setLatitud(localizacion.getLatitude());
+            CoordenadasUsuario.obtenerInstancia().setLongitud(localizacion.getLongitude());
         } else {
             ubicacion.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 0, new milocalizacionListener());
 
@@ -102,10 +117,27 @@ public class Home extends AppCompatActivity {
 
     private void registrarLocalizacion() {
         ubicacion = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
         ubicacion.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 0, new milocalizacionListener());
+    }
+    private void locationStart() {
+        LocationManager mlocManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        Localizacion Local = new Localizacion();
+        //Local.setMainActivity(this);
+        final boolean gpsEnabled = mlocManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        if (!gpsEnabled) {
+            Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+            startActivity(settingsIntent);
+        }
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,}, 1000);
+            return;
+        }
+        mlocManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, (LocationListener) Local);
+        mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, (LocationListener) Local);
+
     }
 
     private class milocalizacionListener implements LocationListener{
@@ -115,8 +147,54 @@ public class Home extends AppCompatActivity {
             Log.d("Latitud", String.valueOf(location.getLatitude()));
             Log.d("Longitud", String.valueOf(location.getLongitude()));
 
-            SesionUsuario.obtenerInstancia().setLatitud(location.getLatitude());
-            SesionUsuario.obtenerInstancia().setLongitud(location.getLongitude());
+            //SesionUsuario.obtenerInstancia().setLatitud(location.getLatitude());
+            //SesionUsuario.obtenerInstancia().setLongitud(location.getLongitude());
+
+            CoordenadasUsuario.obtenerInstancia().setLatitud(location.getLatitude());
+            CoordenadasUsuario.obtenerInstancia().setLongitud(location.getLongitude());
+        }
+    }
+    /* Aqui empieza la Clase Localizacion */
+    public class Localizacion implements LocationListener {
+        MainActivity mainActivity;
+        public MainActivity getMainActivity() {
+            return mainActivity;
+        }
+        public void setMainActivity(MainActivity mainActivity) {
+            this.mainActivity = mainActivity;
+        }
+        @Override
+        public void onLocationChanged(Location loc) {
+            // Este metodo se ejecuta cada vez que el GPS recibe nuevas coordenadas
+            // debido a la deteccion de un cambio de ubicacion
+
+            CoordenadasUsuario.obtenerInstancia().setLatitud(loc.getLatitude());
+            CoordenadasUsuario.obtenerInstancia().setLongitud(loc.getLongitude());
+            //this.mainActivity.setLocation(loc);
+        }
+        @Override
+        public void onProviderDisabled(String provider) {
+            // Este metodo se ejecuta cuando el GPS es desactivado
+
+        }
+        @Override
+        public void onProviderEnabled(String provider) {
+            // Este metodo se ejecuta cuando el GPS es activado
+
+        }
+        @Override
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+            switch (status) {
+                case LocationProvider.AVAILABLE:
+                    Log.d("debug", "LocationProvider.AVAILABLE");
+                    break;
+                case LocationProvider.OUT_OF_SERVICE:
+                    Log.d("debug", "LocationProvider.OUT_OF_SERVICE");
+                    break;
+                case LocationProvider.TEMPORARILY_UNAVAILABLE:
+                    Log.d("debug", "LocationProvider.TEMPORARILY_UNAVAILABLE");
+                    break;
+            }
         }
     }
 

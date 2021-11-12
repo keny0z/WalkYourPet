@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.kevin.walkyourpet.R;
 import com.kevin.walkyourpet.entities.Paseador;
 import com.kevin.walkyourpet.gps.Distancia;
+import com.kevin.walkyourpet.sesion.CoordenadasUsuario;
 import com.kevin.walkyourpet.sesion.SesionUsuario;
 
 import java.util.ArrayList;
@@ -45,7 +46,13 @@ public class RecyclerAdapterPaseador extends RecyclerView.Adapter<RecyclerAdapte
         final Paseador item = paseadores.get(position);
         holder.imagenPaseador.setImageResource(item.getImagen());
         holder.tvNombrePaseador.setText(item.getNombre());
-        holder.tvDistancia.setText(String.valueOf(Distancia.distanciaCoord(6.1494576,-75.3796319, item.getLatitud(),item.getLongitud())));
+
+
+
+
+
+
+        holder.tvDistancia.setText(String.valueOf(Distancia.distanciaCoord(CoordenadasUsuario.obtenerInstancia().getLatitud(), CoordenadasUsuario.obtenerInstancia().getLongitud(), item.getLatitud(),item.getLongitud()))+" km");
 
 
 

@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.kevin.walkyourpet.entities.Mascota;
 import com.kevin.walkyourpet.entities.Usuario;
 import com.kevin.walkyourpet.persistencia.room.DataBaseHelper;
+import com.kevin.walkyourpet.sesion.CoordenadasUsuario;
 
 import java.util.ArrayList;
 
@@ -56,8 +57,8 @@ public class Registro extends AppCompatActivity {
                 usuario.setCelular(txtCelular.getText().toString());
 
                 //provicional
-                usuario.setLatitud(6.1494576);
-                usuario.setLongitud(-75.3796319);
+                usuario.setLatitud(CoordenadasUsuario.obtenerInstancia().getLatitud());
+                usuario.setLongitud(CoordenadasUsuario.obtenerInstancia().getLongitud());
                 //fin provicional
 
                 Usuario usuarioConsultadoUsuario = DataBaseHelper.getDBMainThread(getApplicationContext()).getUsuarioDAO().findByUsuario(usuario.getUsuario());

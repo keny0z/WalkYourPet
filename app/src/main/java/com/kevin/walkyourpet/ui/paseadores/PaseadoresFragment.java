@@ -43,6 +43,7 @@ import com.kevin.walkyourpet.entities.Paseador;
 import com.kevin.walkyourpet.persistencia.room.DataBaseHelper;
 import com.kevin.walkyourpet.recyclerview.adapter.RecyclerAdapterMascota;
 import com.kevin.walkyourpet.recyclerview.adapter.RecyclerAdapterPaseador;
+import com.kevin.walkyourpet.sesion.Paseadores;
 import com.kevin.walkyourpet.sesion.SesionUsuario;
 
 
@@ -79,17 +80,10 @@ public class PaseadoresFragment extends Fragment {
 
         LinearLayoutManager manager = new LinearLayoutManager(getActivity().getApplicationContext());
         rvPaseadores.setLayoutManager(manager);
-        Paseador paseadorUco = new Paseador();
-        paseadorUco.setUsuario("Juan");
-        paseadorUco.setNombre("Juan");
-        paseadorUco.setApellido("Osorio");
-        paseadorUco.setClave("123");
-        paseadorUco.setFechaNacimiento("17/07/2001");
-        paseadorUco.setCelular("3014470368");
-        paseadorUco.setLatitud(6.1505397);
-        paseadorUco.setLongitud(-75.3660258);
-        paseadorUco.setImagen(R.drawable.paseador);
-        paseadores.add(paseadorUco);
+
+       //aqui
+        paseadores= Paseadores.obtenerPaseadores();
+
         adapter= new RecyclerAdapterPaseador(paseadores);
         rvPaseadores.setAdapter(adapter);
 

@@ -2,6 +2,7 @@ package com.kevin.walkyourpet.recyclerview.adapter;
 
 import android.content.Intent;
 import android.os.Build;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,7 +70,7 @@ public class RecyclerAdapterPaseador extends RecyclerView.Adapter<RecyclerAdapte
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(holder.itemView.getContext(), PerfilPaseador.class);
-                //intent.putExtra("itemDetail", item);
+                intent.putExtra("paseador",item);
                 holder.itemView.getContext().startActivity(intent);
             }
         });

@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/imagenUsuario"
+        android:id="@+id/ivImagen"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="50dp"
@@ -22,15 +22,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Manuela"
+        android:text="Usuario"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imagenUsuario"
-        app:layout_constraintStart_toStartOf="@+id/imagenUsuario"
-        app:layout_constraintTop_toBottomOf="@+id/imagenUsuario" />
+        app:layout_constraintEnd_toEndOf="@+id/ivImagen"
+        app:layout_constraintStart_toStartOf="@+id/ivImagen"
+        app:layout_constraintTop_toBottomOf="@+id/ivImagen" />
 
     <Button
-        android:id="@+id/btnEditar"
+        android:id="@+id/btnContactar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Ciudad: Rionegro"
+        android:text="Nombre"
         app:layout_constraintEnd_toEndOf="@+id/tvUsuario"
         app:layout_constraintStart_toStartOf="@+id/tvUsuario"
         app:layout_constraintTop_toBottomOf="@+id/tvUsuario" />
@@ -54,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Edad: 20 años"
+        android:text="Apellido"
         app:layout_constraintEnd_toEndOf="@+id/tvNombre"
         app:layout_constraintStart_toStartOf="@+id/tvNombre"
         app:layout_constraintTop_toBottomOf="@+id/tvNombre" />
@@ -64,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Distancia: 5 Km"
+        android:text="Celular"
         app:layout_constraintEnd_toEndOf="@+id/tvApellido"
         app:layout_constraintStart_toStartOf="@+id/tvApellido"
         app:layout_constraintTop_toBottomOf="@+id/tvApellido" />

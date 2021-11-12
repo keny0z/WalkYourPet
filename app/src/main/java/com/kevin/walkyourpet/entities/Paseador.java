@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey;
 
 import com.kevin.walkyourpet.persistencia.Tabla;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import lombok.Data;
@@ -15,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity(tableName = Tabla.PASEADOR)
 @NoArgsConstructor
-public class Paseador {
+public class Paseador implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     @NonNull

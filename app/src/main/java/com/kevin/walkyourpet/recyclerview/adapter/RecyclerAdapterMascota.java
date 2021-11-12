@@ -1,5 +1,6 @@
 package com.kevin.walkyourpet.recyclerview.adapter;
 
+import android.content.Intent;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.kevin.walkyourpet.PerfilMascota;
 import com.kevin.walkyourpet.R;
 import com.kevin.walkyourpet.entities.Mascota;
 
@@ -57,14 +59,14 @@ public class RecyclerAdapterMascota extends RecyclerView.Adapter<RecyclerAdapter
             }
         });
 
-        /*holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(holder.itemView.getContext(), DetailActivity.class);
-                intent.putExtra("itemDetail", item);
+                Intent intent = new Intent(holder.itemView.getContext(), PerfilMascota.class);
+                intent.putExtra("mascota", item);
                 holder.itemView.getContext().startActivity(intent);
             }
-        });*/
+        });
     }
 
     @Override

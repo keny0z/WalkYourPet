@@ -7,13 +7,15 @@ import androidx.room.PrimaryKey;
 
 import com.kevin.walkyourpet.persistencia.Tabla;
 
+import java.io.Serializable;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @Entity(tableName = Tabla.MASCOTA)
 @NoArgsConstructor
-public class Mascota {
+public class Mascota implements Serializable {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name="id")

@@ -26,11 +26,12 @@ public class PerfilPaseador extends AppCompatActivity {
 
         initComponents();
         paseador= (Paseador) getIntent().getExtras().getSerializable("paseador");
+        ivImagen.setImageResource(paseador.getImagen());
         tvUsuario.setText(paseador.getUsuario());
         tvNombre.setText("Nombre: "+paseador.getNombre());
         tvApellido.setText("Apellido: "+paseador.getApellido());
         tvCelular.setText("Celular: "+paseador.getCelular());
-        ivImagen.setImageResource(paseador.getImagen());
+
     }
 
     private void initComponents(){

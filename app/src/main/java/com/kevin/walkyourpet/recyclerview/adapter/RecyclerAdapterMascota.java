@@ -46,8 +46,8 @@ public class RecyclerAdapterMascota extends RecyclerView.Adapter<RecyclerAdapter
         final Mascota item = mascotas.get(position);
         holder.imagen.setImageResource(item.getImagen());
         holder.tvNombre.setText(item.getNombre());
-        holder.tvPeso.setText(item.getPeso());
-        holder.tvRaza.setText(item.getRaza());
+        holder.tvPeso.setText("Peso: "+item.getPeso()+" kg");
+        holder.tvRaza.setText("Raza: "+item.getRaza());
 
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -110,7 +110,7 @@ public class RecyclerAdapterMascota extends RecyclerView.Adapter<RecyclerAdapter
             super(itemView_1);
 
             imagen = itemView.findViewById(R.id.imagen);
-            tvNombre = itemView.findViewById(R.id.tvNombre);
+            tvNombre = itemView.findViewById(R.id.tvUsuario);
             tvPeso = itemView.findViewById(R.id.tvPeso);
             tvRaza = itemView.findViewById(R.id.tvRaza);
         }

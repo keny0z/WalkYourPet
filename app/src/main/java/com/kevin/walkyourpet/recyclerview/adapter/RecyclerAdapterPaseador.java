@@ -1,5 +1,6 @@
 package com.kevin.walkyourpet.recyclerview.adapter;
 
+import android.content.Intent;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.kevin.walkyourpet.PerfilPaseador;
 import com.kevin.walkyourpet.R;
 import com.kevin.walkyourpet.entities.Paseador;
 import com.kevin.walkyourpet.gps.Distancia;
@@ -63,14 +65,14 @@ public class RecyclerAdapterPaseador extends RecyclerView.Adapter<RecyclerAdapte
             }
         });
 
-        /*holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(holder.itemView.getContext(), DetailActivity.class);
-                intent.putExtra("itemDetail", item);
+                Intent intent = new Intent(holder.itemView.getContext(), PerfilPaseador.class);
+                //intent.putExtra("itemDetail", item);
                 holder.itemView.getContext().startActivity(intent);
             }
-        });*/
+        });
     }
 
     @Override

@@ -12,8 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="16dp"
         android:clickable="true"
         android:src="@drawable/ic_baseline_star_24"
         app:backgroundTint="@color/purple_500"
@@ -24,18 +24,17 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPaseadores"
-        android:layout_width="384dp"
-        android:layout_height="516dp"
+        android:layout_width="387dp"
+        android:layout_height="447dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19999999" />
+        app:layout_constraintVertical_bias="0.2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

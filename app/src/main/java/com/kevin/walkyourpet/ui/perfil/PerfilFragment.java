@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,10 +22,15 @@ public class PerfilFragment extends Fragment {
     private PerfilViewModel perfilViewModel;
     private FragmentPerfilBinding binding;
 
+
+    ImageView imagenUsuario;
+    TextView tvUsuario;
+    TextView tvNombre;
+    TextView tvApellido;
+    TextView tvCelular;
     Button btnEditar;
     TextView tvSalir;
-    TextView tvNombre;
-    TextView tvCelular;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -34,8 +40,10 @@ public class PerfilFragment extends Fragment {
         binding = FragmentPerfilBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         initComponents();
-        tvNombre.setText(SesionUsuario.obtenerInstancia().getNombre());
-        tvCelular.setText(SesionUsuario.obtenerInstancia().getCelular());
+        tvUsuario.setText(SesionUsuario.obtenerInstancia().getUsuario());
+        tvNombre.setText("Nombre: "+SesionUsuario.obtenerInstancia().getNombre());
+        tvApellido.setText("Apellido: "+SesionUsuario.obtenerInstancia().getApellido());
+        tvCelular.setText("Celular: "+SesionUsuario.obtenerInstancia().getCelular());
 
         tvSalir.setOnClickListener(v -> {
             iniciarLogin();
@@ -57,10 +65,13 @@ public class PerfilFragment extends Fragment {
     }
 
     private void initComponents(){
-        btnEditar = binding.btnEditar;
-        tvSalir= binding.tvSalir;
-        tvNombre = binding.tvNombre;
+        imagenUsuario = binding.imagenUsuario;
+        tvUsuario = binding.tvUsuario;
+        tvNombre= binding.tvNombre;
+        tvApellido = binding.tvApellido;
         tvCelular = binding.tvCelular;
+        btnEditar = binding.btnEditar;
+        tvSalir = binding.tvSalir;
     }
 
     private void iniciarLogin(){

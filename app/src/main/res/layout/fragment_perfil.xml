@@ -7,26 +7,26 @@
     tools:context=".ui.perfil.PerfilFragment">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imagenUsuario"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="50dp"
-        android:src="@drawable/paseador"
+        android:src="@drawable/usuario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvNombre"
+        android:id="@+id/tvUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Manuela"
+        android:text="Usuario"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintEnd_toEndOf="@+id/imagenUsuario"
+        app:layout_constraintStart_toStartOf="@+id/imagenUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/imagenUsuario" />
 
     <TextView
         android:id="@+id/tvSalir"
@@ -45,48 +45,39 @@
         android:layout_marginBottom="20dp"
         android:text="Editar Perfil"
         app:layout_constraintBottom_toTopOf="@+id/tvSalir"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/tvNombre"
+        app:layout_constraintEnd_toEndOf="@+id/imagenUsuario"
+        app:layout_constraintStart_toStartOf="@+id/imagenUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/tvUsuario"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Ciudad: Rionegro"
-        app:layout_constraintEnd_toEndOf="@+id/tvNombre"
-        app:layout_constraintStart_toStartOf="@+id/tvNombre"
-        app:layout_constraintTop_toBottomOf="@+id/tvNombre" />
+        android:text="Nombre"
+        app:layout_constraintEnd_toEndOf="@+id/tvUsuario"
+        app:layout_constraintStart_toStartOf="@+id/tvUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/tvUsuario" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvApellido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Correo: manuela@hotmail.com"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        android:text="Apellido"
+        app:layout_constraintEnd_toEndOf="@+id/tvNombre"
+        app:layout_constraintStart_toStartOf="@+id/tvNombre"
+        app:layout_constraintTop_toBottomOf="@+id/tvNombre" />
 
     <TextView
         android:id="@+id/tvCelular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Celular: 3008280111"
-        app:layout_constraintEnd_toEndOf="@+id/textView4"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        android:text="Celular"
+        app:layout_constraintEnd_toEndOf="@+id/tvApellido"
+        app:layout_constraintStart_toStartOf="@+id/tvApellido"
+        app:layout_constraintTop_toBottomOf="@+id/tvApellido" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Edad: 23 años"
-        app:layout_constraintEnd_toEndOf="@+id/tvCelular"
-        app:layout_constraintStart_toStartOf="@+id/tvCelular"
-        app:layout_constraintTop_toBottomOf="@+id/tvCelular" />
 </androidx.constraintlayout.widget.ConstraintLayout>

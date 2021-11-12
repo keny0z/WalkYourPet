@@ -12,7 +12,6 @@ import com.kevin.walkyourpet.entities.Mascota;
 import com.kevin.walkyourpet.entities.Usuario;
 import com.kevin.walkyourpet.persistencia.room.DataBaseHelper;
 import com.kevin.walkyourpet.sesion.SesionUsuario;
-import com.kevin.walkyourpet.ui.mascotas.MascotaFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +41,7 @@ public class RegistroMascota extends AppCompatActivity {
                 mascota.setRaza(txtRaza.getText().toString());
                 mascota.setFechaNacimiento(txtFechaMascota.getText().toString());
                 mascota.setPeso(txtPeso.getText().toString());
-                mascota.setImagen(R.drawable.perro);
+                mascota.setImagen(R.drawable.perro2);
                 List<Mascota> mascotaConsultada = consultarMascotaPorNombre(mascota.getNombre());
                 if(mascotaConsultada.size()==0){
                     ArrayList<Mascota> nuevasMascotas =  SesionUsuario.obtenerInstancia().getMascotas();

@@ -29,18 +29,7 @@ public class Paseadores {
         paseadorUco.setCelular("3014470368");
         paseadorUco.setLatitud(6.1505397);
         paseadorUco.setLongitud(-75.3660258);
-        paseadorUco.setImagen(R.drawable.paseador);
-
-        Paseador paseadorAeropuerto = new Paseador();
-        paseadorAeropuerto.setUsuario("Carlos");
-        paseadorAeropuerto.setNombre("Carlos");
-        paseadorAeropuerto.setApellido("Echeverri");
-        paseadorAeropuerto.setClave("123");
-        paseadorAeropuerto.setFechaNacimiento("17/07/2001");
-        paseadorAeropuerto.setCelular("3016840358");
-        paseadorAeropuerto.setLatitud(6.1702782);
-        paseadorAeropuerto.setLongitud(-75.4257591);
-        paseadorAeropuerto.setImagen(R.drawable.paseador);
+        paseadorUco.setImagen(R.drawable.paseador3);
 
         Paseador paseadorSanNicolas = new Paseador();
         paseadorSanNicolas.setUsuario("Laura");
@@ -53,8 +42,21 @@ public class Paseadores {
         paseadorSanNicolas.setLongitud(-75.3778181);
         paseadorSanNicolas.setImagen(R.drawable.paseador);
 
+        Paseador paseadorAeropuerto = new Paseador();
+        paseadorAeropuerto.setUsuario("Carlos");
+        paseadorAeropuerto.setNombre("Carlos");
+        paseadorAeropuerto.setApellido("Echeverri");
+        paseadorAeropuerto.setClave("123");
+        paseadorAeropuerto.setFechaNacimiento("17/07/2001");
+        paseadorAeropuerto.setCelular("3016840358");
+        paseadorAeropuerto.setLatitud(6.1702782);
+        paseadorAeropuerto.setLongitud(-75.4257591);
+        paseadorAeropuerto.setImagen(R.drawable.paseador2);
+
+
         paseadores.add(paseadorUco);
-        paseadores.add(paseadorAeropuerto);
         paseadores.add(paseadorSanNicolas);
+        paseadores.add(paseadorAeropuerto);
+
     }
 }

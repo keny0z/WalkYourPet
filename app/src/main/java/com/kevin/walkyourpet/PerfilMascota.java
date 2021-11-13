@@ -2,6 +2,7 @@ package com.kevin.walkyourpet;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -30,6 +31,10 @@ public class PerfilMascota extends AppCompatActivity {
         tvFechaNacimiento.setText("Nacimiento: "+mascota.getFechaNacimiento());
         tvPeso.setText("Peso: "+mascota.getPeso()+" kg");
 
+        btnEditarMascota.setOnClickListener(v -> {
+            iniciarEditarMascota(mascota);
+        });
+
 
     }
     private void initComponents(){
@@ -39,5 +44,10 @@ public class PerfilMascota extends AppCompatActivity {
         tvFechaNacimiento= findViewById(R.id.tvFechaNacimiento);
         tvPeso= findViewById(R.id.tvPeso);
         btnEditarMascota= findViewById(R.id.btnEditarMascota);
+    }
+    private void iniciarEditarMascota(Mascota mascota){
+        Intent intent = new Intent(getApplicationContext(), EditarMascota.class);
+        intent.putExtra("mascota",mascota);
+        startActivity(intent);
     }
 }

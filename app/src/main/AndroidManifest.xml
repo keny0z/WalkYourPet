@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WalkYourPet">
         <activity
+            android:name=".EditarUsusario"
+            android:exported="false" />
+        <activity
             android:name=".PerfilMascota"
             android:exported="false" />
         <activity android:name=".PaseadoresFavoritos" />

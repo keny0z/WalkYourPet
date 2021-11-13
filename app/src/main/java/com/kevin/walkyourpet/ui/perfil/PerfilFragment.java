@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.kevin.walkyourpet.EditarUsusario;
 import com.kevin.walkyourpet.MainActivity;
 import com.kevin.walkyourpet.databinding.FragmentPerfilBinding;
 import com.kevin.walkyourpet.sesion.SesionUsuario;
@@ -49,6 +50,10 @@ public class PerfilFragment extends Fragment {
             iniciarLogin();
         });
 
+        btnEditar.setOnClickListener(v -> {
+            iniciarEditarUsuario();
+        });
+
 
 
         //final TextView textView = binding.textNotifications;
@@ -76,6 +81,10 @@ public class PerfilFragment extends Fragment {
 
     private void iniciarLogin(){
         Intent intent = new Intent(getActivity().getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+    }
+    private void iniciarEditarUsuario(){
+        Intent intent = new Intent(getActivity().getApplicationContext(), EditarUsusario.class);
         startActivity(intent);
     }
 

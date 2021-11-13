@@ -53,10 +53,27 @@ public class Paseadores {
         paseadorAeropuerto.setLongitud(-75.4257591);
         paseadorAeropuerto.setImagen(R.drawable.paseador2);
 
+/*
+        Paseador paseadorNasa = new Paseador();
+        paseadorAeropuerto.setUsuario("David");
+        paseadorAeropuerto.setNombre("David");
+        paseadorAeropuerto.setApellido("Gomez");
+        paseadorAeropuerto.setClave("123");
+        paseadorAeropuerto.setFechaNacimiento("17/07/2001");
+        paseadorAeropuerto.setCelular("3005256544");
+        paseadorAeropuerto.setLatitud(37.4244255);
+        paseadorAeropuerto.setLongitud(-122.0676703);
+        paseadorAeropuerto.setImagen(R.drawable.paseador2);
+
+ */
+
+
+
 
         paseadores.add(paseadorUco);
         paseadores.add(paseadorSanNicolas);
         paseadores.add(paseadorAeropuerto);
+        //paseadores.add(paseadorNasa);
 
     }
 }
